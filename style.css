@@ -1,146 +1,323 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oxente Brigadeiro - Nossos Destaques</title>
-    
-    <!-- Importação das Fontes Premium Corrigida (Orbitron, Space Grotesk) -->
-    <link rel="stylesheet" href="https://googleapis.com">
-    
-    <!-- Vínculo com o seu arquivo CSS separado -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ==========================================================================
+   CONFIGURAÇÕES E VARIÁVEIS DO TEMA
+   ========================================================================== */
+:root {
+  --color-bg: #090606;
+  --color-text-main: #ffffff;
+  --color-text-muted: #a39590;
+  
+  /* Cores Neon Calibradas */
+  --neon-pink: #ff1493; /* Tom Rosa Pink/Shock Puro */
+  --neon-blue: #29d8ff;
+  
+  /* Efeito de Vidro Escuro */
+  --card-glass-bg: rgba(18, 13, 11, 0.78);
+  --card-glass-blur: 20px;
+  
+  --transition-premium: cubic-bezier(0.25, 1, 0.5, 1);
+}
 
-    <section class="highlights-section">
-        <!-- Cabeçalho da Seção -->
-        <header class="section-header">
-            
-            <!-- 🍰 ÍCONE DA IMAGEM: Fatias de Bolo/Torta Neon em SVG Nativo Fino Corrigido -->
-            <div class="header-icon-wrapper">
-                <svg xmlns="http://w3.org" viewBox="0 0 100 100" class="neon-cake-image-icon">
-                    <!-- Camada Azul Claro Neon -->
-                    <g class="neon-blue-glow">
-                        <path d="M12 60 L85 42 C85 42 65 30 48 31 C40 31.5 30 36 12 60 Z" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13 60 L85 64" stroke-linecap="round"/>
-                        <circle cx="48" cy="34" r="9"/>
-                        <path d="M48 25 C50 20 54 21 52 21" stroke-linecap="round"/>
-                    </g>
-                    <!-- Camada Rosa Pink Neon -->
-                    <g class="neon-pink-glow">
-                        <path d="M13 72 C20 62 25 72 35 62 C45 72 55 62 65 72 C75 62 80 68 87 60" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13 63 L13 87 L87 73 L87 45" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="48" cy="34" r="4.5" fill="currentColor"/>
-                        <path d="M38 41 C42 43 45 44 48 44 C51 44 55 43 58 41" stroke-linecap="round"/>
-                    </g>
-                </svg>
-            </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-            <div class="title-row">
-                <span class="neon-line line-left"></span>
-                <h2 class="section-title">
-                    <span class="text-pink">NOSSOS</span> <span class="text-blue">DESTAQUES</span>
-                </h2>
-                <span class="neon-line line-right"></span>
-            </div>
-            <p class="section-subtitle">DOCES GOURMET FEITOS PARA VOCÊ ♡</p>
-        </header>
+/* PANO DE FUNDO: Degradê com luminosidade expandida (magenta, rosa e azul) */
+body {
+  background-color: var(--color-bg);
+  background-image: 
+    linear-gradient(135deg, rgba(45, 15, 35, 0.93) 0%, rgba(18, 10, 22, 0.96) 50%, rgba(10, 20, 35, 0.93) 100%),
+    radial-gradient(circle at 15% 25%, rgba(255, 47, 175, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 85% 75%, rgba(41, 216, 255, 0.08) 0%, transparent 55%);
+  background-attachment: fixed;
+  color: var(--color-text-main);
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
 
-        <!-- Grid que organiza os 4 Cards -->
-        <div class="cards-grid">
-            
-            <!-- Card 1 -->
-            <article class="product-card border-pink">
-                <div class="card-image-wrapper">
-                    <img src="https://unsplash.com" alt="Brigadeiro Gourmet" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Brigadeiro Gourmet</h3>
-                    <p class="card-description">Tradicional, Ninho, Nutella, Pistache e mais sabores.</p>
-                    <div class="card-footer">
-                        <div class="card-price">R$ 3,50 <span class="price-unit">cada</span></div>
-                        <a href="https://wa.me." target="_blank" class="btn btn-pink">
-                            <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="btn-icon">
-                                <circle cx="8" cy="21" r="1"/>
-                                <circle cx="19" cy="21" r="1"/>
-                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-                            </svg>
-                            <span>PEDIR AGORA</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
+/* ==========================================================================
+   CABEÇALHO DA SEÇÃO (Igual à Imagem)
+   ========================================================================== */
+.highlights-section {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
 
-            <!-- Card 2 (Imagem Atualizada com Link Direto do Servidor Confiável) -->
-            <article class="product-card border-blue">
-                <div class="card-image-wrapper">
-                    <img src="https://imgur.com" alt="Bolo de Chocolate" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Bolo de Chocolate</h3>
-                    <p class="card-description">Massa fofinha, recheio cremoso e cobertura irresistível.</p>
-                    <div class="card-footer">
-                        <div class="card-price">R$ 89,90 <span class="price-unit">1kg</span></div>
-                        <a href="https://wa.me." target="_blank" class="btn btn-blue">
-                            <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="btn-icon">
-                                <circle cx="8" cy="21" r="1"/>
-                                <circle cx="19" cy="21" r="1"/>
-                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-                            </svg>
-                            <span>PEDIR AGORA</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
+.section-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
 
-            <!-- Card 3 -->
-            <article class="product-card border-pink">
-                <div class="card-image-wrapper">
-                    <img src="https://unsplash.com" alt="Bolo de Morango" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Bolo de Morango</h3>
-                    <p class="card-description">Recheio de morango fresco com creme especial.</p>
-                    <div class="card-footer">
-                        <div class="card-price">R$ 99,90 <span class="price-unit">1kg</span></div>
-                        <a href="https://wa.me." target="_blank" class="btn btn-pink">
-                            <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="btn-icon">
-                                <circle cx="8" cy="21" r="1"/>
-                                <circle cx="19" cy="21" r="1"/>
-                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-                            </svg>
-                            <span>PEDIR AGORA</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
+.header-icon-wrapper {
+  margin-bottom: 1.5rem;
+}
 
-            <!-- Card 4 -->
-            <article class="product-card border-blue">
-                <div class="card-image-wrapper">
-                    <img src="https://unsplash.com" alt="Torta Gourmet" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Torta Gourmet</h3>
-                    <p class="card-description">Diversos sabores para adoçar seu dia.</p>
-                    <div class="card-footer">
-                        <div class="card-price">R$ 79,90 <span class="price-unit">1kg</span></div>
-                        <a href="https://wa.me." target="_blank" class="btn btn-blue">
-                            <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="btn-icon">
-                                <circle cx="8" cy="21" r="1"/>
-                                <circle cx="19" cy="21" r="1"/>
-                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-                            </svg>
-                            <span>PEDIR AGORA</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
+/* ⚡ ESTILIZAÇÃO DO ÍCONE ENVIADO EM SVG (Dimensionado acima da frase) */
+.neon-cake-image-icon {
+  width: 130px; 
+  height: 130px;
+  display: inline-block;
+}
 
-        </div>
-    </section>
+/* Linhas em azul neon do bolo da imagem */
+.neon-blue-glow path, .neon-blue-glow circle {
+  stroke: var(--neon-blue);
+  stroke-width: 2.2;
+  fill: none;
+  filter: drop-shadow(0 0 5px var(--neon-blue)) drop-shadow(0 0 12px rgba(41, 216, 255, 0.4));
+}
 
-</body>
-</html>
+/* Linhas em rosa neon do bolo da imagem */
+.neon-pink-glow path, .neon-pink-glow circle {
+  stroke: var(--neon-pink);
+  stroke-width: 2.2;
+  fill: none;
+  filter: drop-shadow(0 0 5px var(--neon-pink)) drop-shadow(0 0 12px rgba(255, 20, 147, 0.4));
+}
 
+/* Preenchimento do miolo rosa da cereja igual à imagem */
+.neon-pink-glow circle[fill="currentColor"] {
+  fill: var(--neon-pink);
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* FONTE DO TÍTULO: Peso 300 (Ultra Fina e Elegante) */
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 300; 
+  letter-spacing: 5px;
+}
+
+/* Palavra NOSSOS */
+.text-pink {
+  color: #ffffff;
+  text-shadow: none;
+  animation: none;
+}
+
+/* Tom de azul claro neon */
+.text-blue {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px rgba(41, 216, 255, 0.5);
+}
+
+.neon-line {
+  height: 1px;
+  width: 120px;
+}
+
+.line-left {
+  background: linear-gradient(to right, transparent, var(--neon-blue));
+  box-shadow: 0 0 6px var(--neon-blue);
+}
+
+.line-right {
+  background: linear-gradient(to left, transparent, var(--neon-blue));
+  box-shadow: 0 0 6px var(--neon-blue);
+}
+
+.section-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   GRID E CARDS (MOLDURAS NEON)
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.product-card {
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(var(--card-glass-blur));
+  -webkit-backdrop-filter: blur(var(--card-glass-blur));
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  transition: border-color 0.4s var(--transition-premium), box-shadow 0.4s var(--transition-premium);
+}
+
+/* Estado Inicial da Moldura Rosa */
+.border-pink {
+  border: 1px solid rgba(255, 20, 147, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Estado Inicial da Moldura Azul */
+.border-blue {
+  border: 1px solid rgba(41, 216, 255, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* MOLDURAS ACENDEM NO HOVER */
+.product-card.border-pink:hover {
+  border-color: var(--neon-pink);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.7), 
+    0 0 15px rgba(255, 20, 147, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.product-card.border-blue:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.7), 
+    0 0 15px rgba(41, 216, 255, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 210px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--transition-premium);
+}
+
+.product-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  color: var(--color-text-main);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
+}
+
+.card-description {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-price {
+  color: var(--color-text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.price-unit {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   BOTÕES CORPORATIVOS
+   ========================================================================== */
+.btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0.95rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-text-main); 
+  border: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none; 
+  transition: background 0.4s var(--transition-premium), border-color 0.4s var(--transition-premium), box-shadow 0.4s var(--transition-premium), color 0.4s var(--transition-premium);
+}
+
+/* 🛒 ÍCONE DO CARRINHO: Vazado, traço LED fino e Neon Branco constante */
+.btn .btn-icon {
+  width: 24px;       
+  height: 24px;      
+  stroke: #ffffff;   
+  stroke-width: 1.2; 
+  fill: none;        
+  filter: 
+    drop-shadow(0 0 2px #ffffff) 
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+  transition: filter 0.4s var(--transition-premium), stroke 0.4s var(--transition-premium);
+  animation: none;
+}
+
+/* Botão Rosa Base */
+.btn-pink {
+  border-color: rgba(255, 20, 147, 0.35);
+}
+
+/* HOVER ROSA */
+.btn-pink:hover{
+  background:rgba(255,47,175,.18);
+  border-color:var(--neon-pink);
+  box-shadow: inset 0 0 18px rgba(255,47,175,.35), 0 0 18px rgba(255,47,175,.45), 0 0 35px rgba(255,47,175,.22);
+}
+
+.btn-pink:hover .btn-icon {
+  stroke: #ffffff; 
+  filter: 
+    drop-shadow(0 0 4px #ffffff) 
+    drop-shadow(0 0 10px #ffffff)
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); 
+}
+
+/* Botão Azul Base */
+.btn-blue {
+  border-color: rgba(41, 216, 255, 0.35);
+}
+
+/* HOVER AZUL */
+.btn-blue:hover{
+  background:rgba(41,216,255,.18);
+  border-color:var(--neon-blue);
+  box-shadow: inset 0 0 18px rgba(41,216,255,.35), 0 0 18px rgba(41,216,255,.45), 0 0 35px rgba(41,216,255,.22);
+}
+
+.btn-blue:hover .btn-icon {
+  stroke: #ffffff; 
+  filter: 
+    drop-shadow(0 0 4px #ffffff) 
+    drop-shadow(0 0 10px #ffffff)
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); 
+}
